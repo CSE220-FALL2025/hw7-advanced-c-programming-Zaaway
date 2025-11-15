@@ -195,6 +195,13 @@ matrix_sf* create_matrix_sf(char name, const char *expr) {
     return m;
 }
 
+int prec(char op) {
+    if (op == '\'') return 3;
+    if (op == '*') return 2;
+    if (op == '+') return 1;
+    return 0;
+}
+
 char* infix2postfix_sf(char *infix) {
     if (!infix) return NULL;
     
